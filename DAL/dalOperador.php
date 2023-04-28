@@ -1,8 +1,8 @@
 <?php
     namespace DAL; 
-    include '../../DAL/conexao.php';
+    include_once '../../DAL/conexao.php';
 
-    include '../../MODEL/Operador.php';
+    include_once '../../MODEL/Operador.php';
     
     
     class dalOperador{
@@ -13,8 +13,6 @@
           $con = Conexao::conectar(); 
           $result = $con->query($sql); 
           $con = Conexao::desconectar();
-
-          //return $lstOperador; 
    
           foreach($result as $linha){
             
@@ -22,14 +20,17 @@
     
             $operador->setId($linha['id']);
             $operador->setNome($linha['nome']); 
-            $operador->setAniversario($linha['aniversario']); 
+
+            $data = date_create($linha['aniversario']); 
+            $operador->setAniversario(date_format($data, 'd-m-Y'));
+
             $operador->setSalario($linha['salario']); 
     
-            $lstOperador[] = $operador; 
+            $lstOperador[] = $operador;
 
-            return $lstOperador;
         }
-       
+        
+        return $lstOperador;
 
 
 

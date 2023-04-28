@@ -2,7 +2,7 @@
 
 use DAL\dalOperador;
 
-  include '../../DAL/dalOperador.php'; 
+  include_once '../../DAL/dalOperador.php';
   $dal = new \dal\dalOperador(); 
   $lstOperador = $dal->Select(); 
 ?>
@@ -23,6 +23,9 @@ use DAL\dalOperador;
 </head>
 <body>
     <h1>Listar Operadores</h1>
+
+    <?php echo "Total de registros: " . count($lstOperador)?>
+
     <table class="striped blue lighten-2" >
         <tr>
             <th>ID</th>
@@ -37,7 +40,7 @@ use DAL\dalOperador;
                 <td><?php echo $operador->getId(); ?></td>
                 <td><?php echo $operador->getNome(); ?></td>
                 <td><?php echo $operador->getAniversario(); ?></td>
-                <td><?php echo $operador->getSalario(); ?></td>
+                <td><?php echo "R$ " . number_format($operador->getSalario(), 2, ",", "."); ?></td>
             </tr>
         <?php 
             }
