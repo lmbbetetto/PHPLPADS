@@ -7,18 +7,19 @@ class Operador {
     private ?string $aniversario; 
     private ?float $salario; 
 
-public function __construct()
-{
+   public function __construct()
+   {
     
-}
+   }
 
-    // public function __construct(?int $id, ?string$nome, ?string $aniversario, ?float $salario)
-    // {
-    //     $this->id = $id; 
-    //     $this->nome = $nome; 
-    //     $this->aniversario = $aniversario; 
-    //     $this->salario = $salario; 
-    // }
+    /*
+    public function __construct(?int $id, ?string$nome, ?string $aniversario, ?float $salario)
+    {
+        $this->id = $id; 
+        $this->nome = $nome; 
+        $this->aniversario = $aniversario; 
+        $this->salario = $salario; 
+    }*/
 
     public function getId(){
         return $this->id; 

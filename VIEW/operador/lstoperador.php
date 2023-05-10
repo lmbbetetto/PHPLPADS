@@ -1,4 +1,6 @@
 <?php
+    echo __DIR__; 
+     
     include '../../DAL/conexao.php';
     use DAL\Conexao;
     $sql = "select * from operador;";
