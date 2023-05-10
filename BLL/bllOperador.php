@@ -9,7 +9,11 @@
             //linhas de código com regras de negócio
             return $dal->Select();
         }
-
+        public function Insert (\MODEL\Operador $operador) {
+            echo "Nome: " . $operador->getNome() . '</br>';
+            echo "Aniversario: {$operador->getAniversario()} </br>";
+            echo "Salario: {$operador->getSalario()} </br>";
+        }
     }
 
 ?>

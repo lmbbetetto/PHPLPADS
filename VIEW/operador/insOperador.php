@@ -17,24 +17,25 @@
                     <h1>Inserir Operador</h1>
                 </div>
                 <div>
-                    <form action=""  class="styleForm">
+                    <form action="recinsoperador.php" method="POST" id="frminsOperador" class="styleForm">
                         <label for="nome">Nome </label>
                         <input id="nome" type="text" name="txtNome" placeholder="Nome">
-                        
+
                         <label for="aniversario">Aniversário </label>
                         <input id="aniversario" type="date" name="txtAniversario">
-                        
+
                         <label for="salario">Salário </label>
                         <input id="salario" type="text" name="txtSalario" placeholder="Salário">
+                        <div class="botao">
+                            <button type="buttom" class="cancelar">Voltar</button>
+                            <button type="submit" class="enviar">Enviar</button>
+                            <button type="reset" class="limpar">Limpar</button>
+                        </div>
                     </form>
                 </div>
             </div>
 
-            <div class="botao">
-                <button type="submit" class="cancelar">Voltar</button>
-                <button type="submit" class="enviar">Enviar</button>
-                <button type="submit" class="limpar">Limpar</button>
-            </div>
+
 
         </div>
     </div>

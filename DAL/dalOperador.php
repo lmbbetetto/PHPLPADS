@@ -13,21 +13,25 @@
           $result = $con->query($sql); 
           $con = Conexao::desconectar();
 
-          // return $result; não vai retornar como linha e sim como objeto
+          //return $result; não vai retornar como linha e sim como objeto
 
-          foreach($result as $linha) {
-              $operador = new \MODEL\Operador();
+          foreach ($result as $linha){
+              $operador = new \MODEL\Operador(); 
 
-              $operador->setId($linha['id']);
+              $operador->setId($linha['id']); 
               $operador->setNome($linha['nome']);
+              
+             //$operador->setAniversario($linha['aniversario']);
               $data = date_create($linha['aniversario']);
-              $operador->setAniversario($linha['aniversario']);
+              $operador->setAniversario(date_format($data, 'd-m-Y')); 
+
               $operador->setSalario($linha['salario']);
 
-              $listOperador[] = $operador;
+              $lstOperador[] = $operador; 
           }
+
+          return $lstOperador; 
    
-          return $listOperador;
         }
 
         public function SelectID(int $id){
